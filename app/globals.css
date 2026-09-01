@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-lora), Georgia, Baskervville, Century, Noto Sans, serif;
+  --font-mono: var(--font-geist-mono);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overscroll-behavior-y: none;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+.bible {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+
+}
+
+.bible .ayat {
+  font-style: normal;
+  font-size: 10px;
+  text-align: right;
+
+}

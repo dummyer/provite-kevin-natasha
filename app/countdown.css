@@ -1,0 +1,17 @@
+.countdown .title {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* .countdown .countdown_container .countdown_timer_container{
+    background-color: #FFFFFF;
+} */
+
+
+@media (min-width: 1024px) {}

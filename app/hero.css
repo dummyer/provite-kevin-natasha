@@ -1,0 +1,56 @@
+.hero .title {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hero .couple-names {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 96px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFF;
+}
+
+.hero .couple-names .date-block {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.hero .couple-names .connector {
+    font-size: 38px;
+    line-height: 100%;
+}
+
+
+@media (min-width: 1024px) {
+    .hero .title{
+        font-size: 9px;
+    }
+    .hero .couple-names {
+        font-size: 58px;
+    }
+
+    .hero .couple-names .connector {
+        font-size: 20px;
+    }
+
+    .hero .couple-names .date-block {
+        font-size: 9px;
+    }
+
+}

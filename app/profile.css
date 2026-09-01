@@ -1,0 +1,67 @@
+.profile .titledesc {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 10px;
+    line-height: 9px;
+    letter-spacing: 0%;
+    color: #131313;
+}
+
+.profile .newperson {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 9px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+
+}
+
+.profile .newperson .name {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.profile .newperson .sibling {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.profile .newperson .parents {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+@media (min-width: 1024px) {
+    .profile .titledesc {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .profile .newperson .label {
+        font-size: 16px;
+        line-height: 100%;
+    }
+    .profile .newperson .name {
+        font-size: 56px;
+        line-height: 100%;
+    }
+    .profile .newperson .sibling {
+        font-size: 18px;
+        line-height: 100%;
+    }
+    .profile .newperson .parents {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+}
