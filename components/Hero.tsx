@@ -64,7 +64,35 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ data, shouldPlay = true }, re
                 BACKGROUND VIDEO
                ========================================= */}
 
-            
+            <video
+                ref={videoRef}
+                //autoPlay
+                //muted
+                loop
+                playsInline
+                className="
+                    absolute
+                    inset-0
+                    z-0
+                    w-full
+                    h-full
+                    object-cover
+                "
+            >
+                {/* Desktop */}
+                <source
+                    src="/videos/intro_video.mp4"
+                    type="video/mp4"
+                    media="(min-width: 768px)"
+                />
+
+                {/* Mobile */}
+                <source
+                    src="/videos/video_2.mp4"
+                    type="video/mp4"
+                    media="(max-width: 767px)"
+                />
+            </video>
             <VideoSoundButton videoRef={videoRef} />
             {/* =========================================
                 CONTENT
