@@ -1,0 +1,37 @@
+.footer .title {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+}
+
+.footer .desc {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+}
+
+
+@media (min-width: 1024px) {
+    .footer .title {
+        font-size: 62px;
+        line-height: 100%;
+    }
+
+    .footer .desc {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .footer .desc span {
+        line-height: 22px;
+    }
+}

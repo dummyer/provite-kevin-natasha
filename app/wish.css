@@ -1,0 +1,117 @@
+.wish .title {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wish .titlenote {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 42px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wish .titlenote span {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 42px;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wish .titledesc {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wish .wish_button {
+    font-family: var(--font-baskervville);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.wish .wishlist .wish_name {
+    font-family: var(--font-baskervville);
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0%;
+}
+
+.wish .wishlist .wish_msg {
+    font-family: var(--font-baskervville);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0%;
+}
+
+@media (min-width: 1024px) {
+    .wish .title {
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    .wish .titlenote {
+        font-size: 62px;
+        line-height: 100%;
+    }
+
+    .wish .titlenote span {
+        line-height: 6px;
+    }
+
+    .wish .titledesc {
+        font-family: var(--font-newsreader);
+        font-weight: 500;
+        font-style: Italic;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+    }
+
+    .wish .titledesc span {
+        line-height: 22px;
+    }
+
+    .wish .wish_button {
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    .wish .wishlist .wish_name {
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+    .wish .wishlist .wish_msg {
+        font-size: 18px;
+        line-height: 140%;
+    }
+
+}

@@ -9,9 +9,43 @@
     color: #FFFFFF;
 }
 
-/* .countdown .countdown_container .countdown_timer_container{
-    background-color: #FFFFFF;
-} */
+.countdown .countdown_container .countdown_timer {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 34px;
+    line-height: 37.01px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+}
 
+.countdown .countdown_container .countdown_timer.label {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    .countdown .title {
+        font-size: 18px;
+        line-height: 15px;
+    }
+     .countdown .title span {
+        line-height: 22px;
+    }
+    .countdown .countdown_container .countdown_timer {
+        font-size: 72px;
+        line-height: 77.44px;
+    }
+    .countdown .countdown_container .countdown_timer.label {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+}

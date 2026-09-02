@@ -1,0 +1,141 @@
+/* =========================================================
+   EVENT FONTS
+   ========================================================= */
+
+.event__venue-name {
+    font-family:
+        "Bickham Script Pro",
+        "Edwardian Script ITC",
+        "Kunstler Script",
+        "Snell Roundhand",
+        cursive;
+}
+
+.event__eyebrow,
+.event__address,
+.event__item h2,
+.event__item p,
+.event__item strong {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.event__maps-button {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+.event .title {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 9px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+}
+
+.event .placename {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #131313;
+}
+
+.event .address {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+}
+
+.event .mapbutton {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 9px;
+    line-height: 10.29px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.event .subevent {
+    font-family: var(--font-newsreader);
+    letter-spacing: 0%;
+    text-align: center;
+    color: #131313;
+    font-weight: 500;
+    font-style: Italic;
+}
+
+.event .subevent_name {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.event .subevent_address {
+    font-size: 10px;
+    line-height: 100%;
+}
+
+.event .subevent_time {
+    font-size: 12px;
+    line-height: 100%;
+}
+
+@media (min-width: 1024px) {
+    .event .title {
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 500;
+    }
+
+    .event .placename {
+        font-size: 56px;
+        line-height: 100%;
+    }
+
+    .event .address {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .event .address span {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+    }
+
+    .event .subevent_name {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+    }
+
+    .event .subevent_address {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .event .subevent_time {
+        font-size: 20px;
+        line-height: 100%;
+        font-weight: 500;
+    }
+
+}

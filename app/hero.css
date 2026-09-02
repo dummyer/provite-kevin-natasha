@@ -2,7 +2,7 @@
     font-family: var(--font-newsreader);
     font-weight: 500;
     font-style: Italic;
-    font-size: 16px;
+    font-size: 9px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
@@ -13,7 +13,7 @@
     font-family: var(--font-pinyon-script);
     font-weight: 400;
     font-style: Regular;
-    font-size: 96px;
+    font-size: 58px;
     line-height: 100%;
     letter-spacing: 0%;
     color: #FFF;
@@ -23,7 +23,7 @@
     font-family: var(--font-newsreader);
     font-weight: 500;
     font-style: Italic;
-    font-size: 16px;
+    font-size: 9px;
     text-align: center;
     text-transform: capitalize;
     line-height: 100%;
@@ -32,25 +32,25 @@
 }
 
 .hero .couple-names .connector {
-    font-size: 38px;
+    font-size: 20px;
     line-height: 100%;
 }
 
 
 @media (min-width: 1024px) {
     .hero .title{
-        font-size: 9px;
+        font-size: 16px;
     }
     .hero .couple-names {
-        font-size: 58px;
+        font-size: 96px;
     }
 
     .hero .couple-names .connector {
-        font-size: 20px;
+        font-size: 38px;
     }
 
     .hero .couple-names .date-block {
-        font-size: 9px;
+        font-size: 16px;
     }
 
 }

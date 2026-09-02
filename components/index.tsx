@@ -15,12 +15,20 @@ import MusicPlayer, {
   type MusicPlayerRef,
 } from "@/app/sections/MusicPlayer";
 import Rsvp from "./RSVP";
-import Gift from "./Gift";
 import Countdown from "./Countdown";
 import Hero from "./Hero";
 import Bible from "./Bible";
 import Profile from "./Profile";
 import Gallery1 from "./Gallery1";
+import Dresscode from "./Dresscode";
+import Footer from "./Footer";
+import Gallery2 from "./Gallery2";
+import Photocard from "./Photocard";
+import Wishes from "./Wish";
+import Video from "./Video";
+import Event from "./Event"
+import Gallery from "./Gallery";
+import LogoSeparator from "./LogoSeparator";
 
 type ActivePopup =
   | {
@@ -33,7 +41,22 @@ type ActivePopup =
   | null;
 
 const CRITICAL_IMAGES = [
-  ""
+  "/images/bg_popup.png",
+  "/images/gallery1.png",
+  "/images/gallery2.png",
+
+  "/images/countdown_bg.png",
+
+  "/gallery/Asset-03.jpg",
+  "/gallery/Asset-05.jpg",
+  "/gallery/Asset-06.jpg",
+  "/gallery/Asset-07.jpg",
+  "/gallery/Asset-08.jpg",
+  "/gallery/Asset-09.jpg",
+  "/gallery/Asset-10.jpg",
+  "/gallery/Asset-11.jpg",
+  "/gallery/Asset-12.jpg",
+
 ];
 
 
@@ -51,9 +74,9 @@ export default function Home({
     type: "invitation",
   });
 
-  //const isBlurred = activePopup !== null;
-  const isBlurred = false;
-  
+  const isBlurred = activePopup !== null;
+  //const isBlurred = false;
+
 
   // Fetch data tamu (nama, pin asli) pakai pin dari localStorage.
   // Hasilnya di-merge ke `data` sebelum diteruskan ke RSVP
@@ -122,7 +145,7 @@ export default function Home({
         </div>
       )}
 
-      {/* {ready && activePopup?.type === "invitation" && (
+      {ready && activePopup?.type === "invitation" && (
         <>
           <div>
             <InvitationPopup
@@ -131,12 +154,13 @@ export default function Home({
                 musicPlayerRef.current?.playMusic();
               }}
               name={guestData?.name}
+              data={data}
             />
           </div>
         </>
-      )} */}
+      )}
 
-      <MusicPlayer ref={musicPlayerRef} />
+      {/* <MusicPlayer ref={musicPlayerRef} /> */}
 
       {ready && activePopup?.type === "status" && (
         <StatusPopup
@@ -164,20 +188,43 @@ export default function Home({
 
         <div className="relative">
           <main className="w-full mx-auto bg-[#37576F]">
-            <SectionMotif  className="w-full ">
-              <Hero data={mergedData} />
+            <SectionMotif className="w-full ">
+              <Hero data={mergedData} shouldPlay={!isBlurred} />
               <Bible data={mergedData} />
               <Profile data={mergedData} />
               <Gallery1 data={mergedData} />
-              <Rsvp data={mergedData} />
+
+              <LogoSeparator desktop={false} />
+
+              <Event data={mergedData} />
               <Countdown data={mergedData} />
-              <Gift data={mergedData} />
+              <Dresscode data={mergedData} />
+              <Gallery data={mergedData} />
+
+              <LogoSeparator />
+
+              <Rsvp data={mergedData} />
+              <Photocard data={mergedData} />
+              <Video data={mergedData} />
+              <Wishes data={mergedData} />
+
+              {/* Wrapper shared background buat Gallery2 + Footer */}
+              <div className="relative w-full">
+                <div
+                  className="absolute inset-0 w-full bg-cover bg-center pointer-events-none"
+                  style={{ backgroundImage: `url('/images/footer_bg.png')` }}
+                />
+                <div className="relative z-10">
+                  <Gallery2 data={mergedData} />
+                  <Footer data={mergedData} />
+                </div>
+              </div>
             </SectionMotif>
 
           </main>
         </div>
 
-       
+
 
 
       </div>

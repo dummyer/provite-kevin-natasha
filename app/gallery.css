@@ -1,0 +1,88 @@
+.gallery {
+  position: relative;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+}
+
+.gallery__swiper {
+  width: 100%;
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.gallery__image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* mobile: height auto (ngikutin rasio asli gambar) */
+}
+
+.gallery__image-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.gallery .swiper-pagination {
+  bottom: 38px !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.gallery .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+
+  margin: 0 !important;
+
+  background: #ffffff;
+  opacity: 0.45;
+}
+
+.gallery .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .gallery .swiper-pagination {
+    bottom: 25px !important;
+  }
+
+  .gallery .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .gallery__image {
+    height: 100vh;
+  }
+
+  .gallery__image-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+}

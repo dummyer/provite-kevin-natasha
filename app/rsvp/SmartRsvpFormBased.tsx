@@ -12,6 +12,8 @@ import {
     ConfirmedRsvpModal,
 } from "./SmartRsvpFormModals";
 import Image from "next/image";
+import FadeIn from "../sections/FadeIn";
+import BouncyZoom from "../sections/BouncyZoom";
 
 type SmartRsvpControllerValue = ReturnType<typeof useSmartRsvpController>;
 const SmartRsvpContext = createContext<SmartRsvpControllerValue | null>(null);
@@ -43,7 +45,7 @@ function AttendToggle({ className }: { className?: string }) {
     const { setAttendStatus } = useSmartRsvpContext();
     return (
         <button onClick={() => setAttendStatus(1)} className={className}>
-            Hadir
+            ATTEND
         </button>
     );
 }
@@ -52,7 +54,7 @@ function NotAttendToggle({ className }: { className?: string }) {
     const { setAttendStatus } = useSmartRsvpContext();
     return (
         <button onClick={() => setAttendStatus(2)} className={className}>
-            Tidak Hadir
+            UNABLE TO ATTEND
         </button>
     );
 }
@@ -62,32 +64,63 @@ function AccordionSection({ className, bgActiveColor }: { className?: string; bg
 }
 
 function SubmitButton({ className }: { className?: string }) {
-    const { attendStatus, handleSubmit, isSubmit, confirmed } = useSmartRsvpContext();
+    const { attendStatus, handleRSVP, isSubmit, confirmed } = useSmartRsvpContext();
     if (attendStatus === 0) return null;
 
     return (
         <>
-            <button onClick={handleSubmit} className={className} disabled={isSubmit || confirmed}>
-                {isSubmit
-                    ? "Mengirim..."
-                    : attendStatus === 1
-                        ? "Konfirmasi Hadir"
-                        : "Konfirmasi Tidak Hadir"}
-            </button>
-            <h1 className="rsvp_content info lg:max-w-[529px] max-w-[240px]" style={{ lineHeight: "18px", fontSize: "14px" }}>Jika mengalami kendala dalam konfirmasi kehadiran, silakan hubungi tim bantuan kami.</h1>
-            <button
-                onClick={() => window.open("https://wa.me/0", "_blank")}
-                className="flex items-center gap-[7px] lg:gap-[9px] mt-[20px] 
-                                    py-[12px] px-[6px]
-                                    lg:py-[3px] lg:px-[53px]
-                                    hover rsvp_button cursor-pointer lg:w-[368px] w-[200px] lg:h-[40px] h-[30px] items-center justify-center"
-                style={{ backgroundColor: "#12877B", color: "white", borderRadius: "6px" }}
-            >
-                <Image src="/ico/ic_wa.svg" alt="WhatsApp" width={16} height={16}
-                    className="lg:w-[25px] lg:h-[28px]"
-                />
-                Kirim Pesan Bantuan
-            </button>
+            <BouncyZoom>
+                <button
+                    onClick={handleRSVP}
+                    className={className}
+                    disabled={isSubmit}
+                >
+                    <span
+                        key={isSubmit ? "loading" : attendStatus}
+                        className={`text-center leading-[15px] lg:leading-[21.78px] my-auto ${isSubmit ? "mt-[14px] lg:mt-[18px]" : attendStatus === 1 ? "mt-[14px] lg:mt-[20px]" : "mt-2 lg:mt-[10px]"}`}
+                    >
+                        {isSubmit ? (
+                            "Submiting..."
+                        ) : attendStatus === 1 ? (
+                            "CONFIRM ATTEND"
+                        ) : (
+                            <>
+                                CONFIRM UNABLE
+                                <br />
+                                TO ATTEND
+                            </>
+                        )}
+                    </span>
+                </button>
+            </BouncyZoom>
+            <FadeIn>
+                <p className="rsvp_assist_label h-[26px] lg:h-[47px] 
+            lg:max-w-[529px] max-w-[240px]">
+                    If you need assistance with your RSVP,<br></br>
+                    please contact our support team.
+                </p>
+            </FadeIn>
+            <BouncyZoom>
+                <button
+                    onClick={() => window.open("https://wa.me/6281998478131", "_blank")}
+                    className="flex items-center gap-[7px] lg:gap-[9px] 
+                                    mt-[25px] lg:mt-[30px]
+                                    
+                                    hover rsvp_button cursor-pointer 
+                                    
+                                    w-[160px] h-[30px]
+                                    lg:w-[234px] lg:h-[44px] 
+                                    items-center justify-center
+                                    rounded-[55px]
+                                    "
+                    style={{ backgroundColor: "#12877B", color: "white", lineHeight: '15px' }}
+                >
+                    <Image src="/ico/ic_wa.svg" alt="WhatsApp" width={16} height={16}
+                        className="lg:w-[25px] lg:h-[28px]"
+                    />
+                    <span className="mt-1"> CHAT SUPPORT</span>
+                </button>
+            </BouncyZoom>
         </>
     );
 }
@@ -115,9 +148,12 @@ function Modals() {
             {showClosedModal && (
                 <RsvpClosedModal onClose={() => setShowClosedModal(false)} whatsappNumber={invitationUrl} />
             )}
+
+
             {showConfirmModal && (
                 <ConfirmRsvpModal onClose={() => setShowConfirmModal(false)} onConfirm={handleRSVP} />
             )}
+
             {showModal && (
                 <ConfirmedRsvpModal onClose={() => setShowModal(false)} title="RSVP CONFIRMED" status={attendStatus} />
             )}

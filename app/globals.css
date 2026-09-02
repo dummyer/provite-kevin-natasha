@@ -40,6 +40,160 @@ img {
   -webkit-user-drag: none;
 }
 
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  /* firefox */
+  scrollbar-color: #FFFFFF transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  /* lebar total track, bikin agak lebar dulu buat testing */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF;
+  background-clip: padding-box;
+  /* coba padding-box, bukan content-box */
+  border: 4px solid transparent;
+  border-radius: 10px;
+}
+
+.popup {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-style: Regular;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #4D4D4D;
+
+}
+
+.popup .popup_title_gold {
+  font-size: 10px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.popup .popup_title_name {
+  font-family: var(--font-pinyon-script);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 24.29px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #131313;
+}
+
+.popup .popup_title_content {
+  font-size: 12px;
+  line-height: 25px;
+
+}
+
+.popup .popup_title_content span {
+  font-size: 16px;
+  line-height: 25px;
+
+}
+
+.popup .popup_title_apology {
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 500;
+
+}
+
+.popup .popup_title_button {
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  color: #FEF8EF;
+}
+
+.menu_text {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  color: #fff;
+}
+
+.menu_info {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 8px;
+  line-height: 106%;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.status_popup_title {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #605F5E;
+}
+
+.status_popup_content {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #605F5E;
+}
+
+.status_popup_button {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #605F5E;
+}
+
+.hover:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.hover_popup_button:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+.blur-background {
+  filter: blur(8px);
+  transition: filter .3s ease;
+}
+
+.frame-border {
+  border-image-source: url("/images/frame_portrait.png");
+  border-image-slice: 230;
+  border-image-width: 40px;
+  border-image-repeat: stretch;
+  border-style: solid;
+  border-width: 0;
+}
+
 .bible {
   font-family: var(--font-newsreader);
   font-weight: 500;
@@ -55,5 +209,121 @@ img {
   font-style: normal;
   font-size: 10px;
   text-align: right;
+
+}
+
+.photocard .desc {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 9px;
+  line-height: 10px;
+  letter-spacing: 0%;
+  color: #131313;
+}
+
+.video .desc {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 9px;
+  line-height: 10px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+@media (min-width: 768px) {
+  .popup {
+    font-size: 13px;
+  }
+
+  .popup .popup_title_name {
+    font-size: 54px;
+  }
+
+  .popup .popup_title_content {
+    font-size: 16px;
+    line-height: 31px;
+  }
+
+  .popup .popup_title_content span {
+    font-size: 20px;
+  }
+
+  .popup .popup_title_apology {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+
+  .status_popup_title {
+    font-size: 24px;
+  }
+
+  .status_popup_content {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .status_popup_button {
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  .photocard .desc {
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+  .photocard .desc span {
+    line-height: 22px;
+  }
+
+  .video .desc {
+    font-size: 16px;
+    line-height: 10px;
+  }
+
+
+  .popup {
+    font-size: 12px;
+    line-height: 100%;
+
+  }
+
+  .popup .popup_title_gold {
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .popup .popup_title_name {
+    font-size: 40px;
+    line-height: 100%;
+  }
+
+  .popup .popup_title_content {
+    font-size: 16px;
+    line-height: 31px;
+
+  }
+
+  .popup .popup_title_content span {
+    font-size: 20px;
+    line-height: 31px;
+
+  }
+
+  .popup .popup_title_apology {
+    font-size: 12px;
+    line-height: 16px;
+
+  }
+
+  .popup .popup_title_button {
+    font-size: 12px;
+    line-height: 100%;
+  }
 
 }

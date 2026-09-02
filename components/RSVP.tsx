@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { SmartRsvpForm, useSmartRsvp } from "@/app/rsvp/SmartRsvpFormBased";
 import moment from "moment";
+import '@/app/rsvp.css';
+import FadeIn from "@/app/sections/FadeIn";
+import BouncyZoom from "@/app/sections/BouncyZoom";
 
 moment.locale("en");
 
@@ -24,70 +27,119 @@ function RSVPSectionDesign({ data }: { data: any }) {
     const selected = attendStatus === 1 ? "hadir" : attendStatus === 2 ? "tidak" : null;
 
     return (
-        <div id="rsvp">
+        <div id="rsvp" className="w-full">
             <SmartRsvpForm.Modals />
 
-            <div className="relative flex flex-col items-center text-center rsvp mt-2 lg:mt-0">
-                <div className="lg:h-[76px] h-[57px]">
-                    <p className="rsvp_title lg:pt-[10px] pt-[7px]">Rsvp</p>
-                </div>
+            <div
+                className="rsvp w-full relative bg-white 
+                p-[35px_35px_55px] 
+                lg:p-[60px_100px] 
+                "
+                id="rsvp"
+            >
+                {/* Layer 1: base color */}
+                <div className="absolute inset-0 bg-[#251001] pointer-events-none" />
 
-                <h1 className="mt-[41px] mb-[10px] lg:mt-[51px] lg:mb-4">
-                    Dear Mr. /Mrs. / Ms.
-                </h1>
-
-                <div className="h-[14px] mb-[18px] lg:mb-[26.23px]">
-                    <h1 className="h-[14px] rsvp_guest">
-                        {paramUrl !== "" ? paramUrl : guestData?.name ?? "............."}
-                    </h1>
-                </div>
-
-                <div className="h-[40px] lg:h-[60px] mb-[14px] lg:mb-[26px] rsvp_content">
-                    <h1
-                        className=""
-                    >
-                        Kindly confirm your attendance before<br />
-
-                    </h1>
-                    <p className="rsvp_time">{moment(
-                        data?.dataEvent?.closeRSVPDate
-                            ? new Date(data.dataEvent.closeRSVPDate).toISOString()
-                            : new Date().toISOString()
-                    ).format("DD MMMM YYYY")}</p>
-                </div>
-
+                {/* Layer 2: texture, multiply ke base color */}
                 <div
-                    className="flex gap-[22px] lg:gap-[28.69px] mb-[58px] lg:mb-[105px]"
-                    style={{ justifyContent: "center" }}
-                >
-                    <SmartRsvpForm.AttendToggle
-                        className={`h-[42px] w-[113px] z-10 lg:w-[203px] px-[6px] rounded-[71px] border flex items-center justify-center leading-none rsvp_button cursor-pointer hover
-        ${selected === "hadir"
-                                ? "bg-[#5F2D1C] text-white border-transparent"
-                                : "bg-transparent text-[#5F2D1C] border-[#5F2D1C]"}`}
-                    />
-                    <SmartRsvpForm.NotAttendToggle
-                        className={`h-[42px] w-[113px] z-10 lg:w-[203px] px-[6px] rounded-[71px] border flex items-center justify-center leading-none rsvp_button cursor-pointer hover
-        ${selected === "tidak"
-                                ? "bg-[#5F2D1C] text-white border-transparent"
-                                : "bg-transparent text-[#5F2D1C] border-[#5F2D1C]"}`}
+                    className="absolute inset-0 mix-blend-multiply pointer-events-none"
+                    style={{
+                        backgroundImage: `url('/images/rsvp_bg.png')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+
+                {/* Layer 3: overlay warna tambahan (opacity 0, tinggal naikin kalau perlu) */}
+                <div className="absolute inset-0 bg-[#251001] mix-blend-multiply opacity-0 pointer-events-none" />
+
+                <div className="items-center flex flex-col w-full relative z-10">
+                    <FadeIn>
+                        <div className="mb-[85px] lg:mb-[60px]">
+                            <p className="rsvp_title">RSVP</p>
+                        </div>
+                    </FadeIn>
+
+                    <FadeIn>
+                        <h1 className="dear mb-[10px] lg:mb-[15px]">
+                            MR. / MRS. / MS.
+                        </h1>
+                    </FadeIn>
+
+                    <FadeIn>
+                        <div className="h-[14px] lg:h-[45px] mb-10 mb-15">
+                            <h1 className="rsvp_guest">
+                                {paramUrl !== "" ? paramUrl : guestData?.name ?? "............."}
+                            </h1>
+                        </div>
+                    </FadeIn>
+
+                    <FadeIn>
+                        <div className="mb-5 lg:mb-8 rsvp_content w-[200px] lg:w-[382px]">
+                            <h1 className="">
+                                Due to seating arrangements, we kindly request
+                                <span> your confirmation of attendance.</span>
+                            </h1>
+                            <span> by </span>
+                            <span className="rsvp_time">
+                                {moment(
+                                    data?.dataEvent?.closeRSVPDate
+                                        ? new Date(data.dataEvent.closeRSVPDate).toISOString()
+                                        : new Date().toISOString()
+                                ).format("DD MMMM YYYY")}
+                            </span>
+                        </div>
+                    </FadeIn>
+
+
+                    <div
+                        className="flex gap-[22px] lg:gap-[28.69px] mb-[60px] lg:mb-[85px]"
+                        style={{ justifyContent: "center" }}
+                    >
+                        <BouncyZoom>
+                            <SmartRsvpForm.AttendToggle
+                                className={`h-[42px] w-[113px] z-10 
+                                        lg:w-[165px] lg:h-[60px] 
+                                        pt-1
+                                        px-[6px] rounded-[71px] border flex items-center justify-center 
+                                        leading-none rsvp_button cursor-pointer hover
+                                    ${selected === "hadir"
+                                        ? "bg-[#FFFFFF] text-[#1F0D01] border-transparent"
+                                        : "bg-transparent text-[#FFFFFF] border-[#FFFFFF]"}`}
+                            />
+                        </BouncyZoom>
+                        <BouncyZoom>
+                            <SmartRsvpForm.NotAttendToggle
+                                className={`h-[42px] w-[113px] z-10 
+                                pt-1
+                                        lg:w-[165px] lg:h-[60px] 
+                                        px-[6px] rounded-[71px] border flex items-center justify-center leading-none rsvp_button cursor-pointer hover
+                                    ${selected === "tidak"
+                                        ? "bg-[#FFFFFF] text-[#1F0D01] border-transparent"
+                                        : "bg-transparent text-[#FFFFFF] border-[#FFFFFF]"}`}
+                            />
+                        </BouncyZoom>
+                    </div>
+                    <FadeIn>
+
+                        {selected !== null && <p className="rsvp_confirm_label mb-[25px] lg:mb-[35px]">Confirm Your RSVP</p>}
+                    </FadeIn>
+                    <SmartRsvpForm.Accordion className="w-full mb-[36px]" bgActiveColor="#5F2D1C" />
+
+                    <SmartRsvpForm.SubmitButton
+                        className={`
+                            h-[42px] w-[200px] 
+                            lg:h-[60px] lg:w-[292px]
+                            px-[6px] rounded-[71px] 
+                            border 
+                            flex items-center justify-center 
+                            rsvp_button cursor-pointer hover
+                            mb-[50px] lg:mb-[80px]
+                            ${confirmed
+                                ? "bg-[#FFFFFF] text-[#1F0D01] border-transparent"
+                                : "bg-transparent text-[#FFFFFF] border-[#FFFFFF]"}`}
                     />
                 </div>
-
-                {selected !== null && <p className="rsvp_confirm_label mb-[24px] lg:mb-[39px]">Confirm Your RSVP</p>}
-                <SmartRsvpForm.Accordion className="w-full mb-[36px]" bgActiveColor="#5F2D1C" />
-
-                <SmartRsvpForm.SubmitButton
-                    className={`h-[42px] px-[6px] rounded-[71px] lg:w-[220px] lg:h-[52px]
-        border flex items-center justify-center leading-none rsvp_button cursor-pointer hover w-[220px] 
-         h-[30px]
-        mb-[64px]
-        lg:mb-[71px]
-
-        ${confirmed
-                            ? "bg-[#5F2D1C] text-white border-transparent"
-                            : "bg-transparent text-[#5F2D1C] border-[#5F2D1C]"}`}
-                />
             </div>
         </div>
     );

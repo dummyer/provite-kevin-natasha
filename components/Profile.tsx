@@ -3,6 +3,7 @@
 import { forwardRef, useState } from "react";
 import Image from "next/image";
 import "@/app/profile.css";
+import FadeIn from "@/app/sections/FadeIn";
 
 type ProfileProps = {
     data: any;
@@ -37,13 +38,23 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center">
                     {/* Groom */}
                     <div className="items-center newperson flex flex-col h-full w-full">
-                        <Image src="/images/profile_groom.png" alt="Logo" width={168} height={223}
-                            className="lg:w-[266px] lg:h-[347px]"
-                        />
-                        <div className="label my-[15px_10px] lg:my-[30px_12px]">The Groom</div>
-                        <div className="name min-h-[42px] lg:min-h-[70px]">{groomName}</div>
-                        <div className="sibling my-[10px_5px] lg:my-[15px_8px]">The first son of two siblings.</div>
-                        <div className="parents">{groomParents}</div>
+                        <FadeIn>
+                            <Image src="/images/profile_groom.png" priority alt="Logo" width={168} height={223}
+                                className="lg:w-[266px] lg:h-[347px]"
+                            />
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="label my-[15px_10px] lg:my-[30px_12px]">The Groom</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="name min-h-[42px] lg:min-h-[70px]">{groomName}</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="sibling my-[10px_5px] lg:my-[15px_8px]">The first son of two siblings.</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="parents">{groomParents}</div>
+                        </FadeIn>
                     </div>
 
                     {/* --------- */}
@@ -56,13 +67,23 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
 
                     {/* Bride */}
                     <div className="items-center newperson flex flex-col h-full w-full">
-                        <Image src="/images/profile_bride.png" alt="Logo" width={168} height={223}
-                            className="lg:w-[266px] lg:h-[347px]"
-                        />
-                        <div className="label my-[15px_10px] lg:my-[30px_12px]">The Bride</div>
-                        <div className="name min-h-[42px] lg:min-h-[70px]">{brideName}</div>
-                        <div className="sibling my-[10px_5px] lg:my-[15px_8px]">The first daughter of three siblings.</div>
-                        <div className="parents">{brideParents}</div>
+                        <FadeIn>
+                            <Image src="/images/profile_bride.png" priority alt="Logo" width={168} height={223}
+                                className="lg:w-[266px] lg:h-[347px]"
+                            />
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="label my-[15px_10px] lg:my-[30px_12px]">The Bride</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="name min-h-[42px] lg:min-h-[70px]">{brideName}</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="sibling my-[10px_5px] lg:my-[15px_8px]">The first daughter of three siblings.</div>
+                        </FadeIn>
+                        <FadeIn>
+                            <div className="parents">{brideParents}</div>
+                        </FadeIn>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,152 @@
+.rsvp {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.rsvp .rsvp_title {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.rsvp .dear {
+    font-family: var(--font-newsreader);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.rsvp .rsvp_guest {
+    font-family: var(--font-pinyon-script);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.rsvp .rsvp_content {
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.rsvp .rsvp_time {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.rsvp .rsvp_confirm_label {
+    font-family: var(--font-newsreader);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14.96px;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.rsvp .rsvp_chatwa {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.rsvp .rsvp_button {
+    font-family: var(--font-newsreader);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14.96px;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.rsvp .rsvp_assist_label {
+    font-family: var(--font-newsreader);
+    font-weight: 400;
+    font-style: Medium;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+
+@media (min-width: 1024px) {
+    .rsvp .rsvp_title{
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    .rsvp .dear{
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .rsvp .rsvp_guest{
+        font-size: 36px;
+        line-height: 100%;
+    }
+
+    .rsvp .rsvp_content{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+
+    .rsvp .rsvp_content span{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+
+    .rsvp .rsvp_button{
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .rsvp .rsvp_confirm_label{
+        font-size: 18px;
+        line-height: 21.78px;
+        font-weight: 500;
+    }
+
+    .rsvp .rsvp_assist_label{
+        font-size: 14.56px;
+        line-height: 23.3px;
+        font-weight: 500;
+    }
+}

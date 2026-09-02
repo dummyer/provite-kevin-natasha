@@ -28,7 +28,7 @@ export default function CoupleNames({ fullText, separator = "&", date }: CoupleN
                     </div>
 
                     <div className="flex gap-[6px] lg:gap-[14px] mt-[-10px] lg:mt-[-20px]">
-                        <div className="connector lg:mr-[14px] mt-[15px] lg:mt-[20px]">and</div>
+                        <div className="connector lg:mr-[14px] mt-[15px] lg:mt-[23px]">and</div>
                         <div className="name-secondary ml-[10px] lg:ml-[7px] pt-[5px]">{name2}</div>
                     </div>
                 </div>

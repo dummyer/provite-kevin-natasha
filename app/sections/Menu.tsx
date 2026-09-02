@@ -8,12 +8,11 @@ import type { Variants } from "framer-motion";
 const MENU_ITEMS = [
   { label: "HOME", href: "#home" },
   { label: "PROFILE", href: "#profile" },
-  { label: "DATE", href: "#date" },
   { label: "EVENT DETAIL", href: "#eventdetail" },
-  { label: "GALLERY", href: "#gallery" },
+  { label: "DATE", href: "#date" },
   { label: "DRESS CODE", href: "#dresscode" },
+  { label: "GALLERY", href: "#gallery" },
   { label: "RSVP", href: "#rsvp" },
-  { label: "GIFT", href: "#gift" },
   { label: "WISHES", href: "#wishes" },
 ];
 

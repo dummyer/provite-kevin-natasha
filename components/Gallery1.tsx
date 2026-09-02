@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef, useState } from "react";
+import Image from "next/image";
 
 type Gallery1Props = {
     data: any;
@@ -8,10 +9,15 @@ type Gallery1Props = {
 
 const Gallery1 = forwardRef<HTMLElement, Gallery1Props>(({ data }, ref) => {
     return (
-        <div className="w-full h-[100vh] relative bg-white" id="gallery">
-            <div
-                className="absolute inset-0 bg-cover bg-center pointer-events-none"
-                style={{ backgroundImage: `url('/images/gallery.png')` }}
+        <div className="w-full h-[520px] lg:h-[951px] relative bg-white" id="">
+            <Image
+                src="/images/gallery.png"
+                alt="Gallery"
+                priority
+                fill
+                className="object-cover"
+                style={{ objectPosition: "center 65%" }}
+                sizes="100vw"
             />
         </div>
     );

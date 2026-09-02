@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "@/app/countdown.css";
 import { getEventTimestamp, formatEventDateParts } from "@/app/lib/date";
+import FadeIn from "@/app/sections/FadeIn";
+import BouncyZoom from "@/app/sections/BouncyZoom";
 
 function pad(n: number) {
     return String(n).padStart(2, "0");
@@ -42,33 +44,43 @@ export default function Countdown({ data }: CountdownProps) {
     const dateParts = useMemo(() => formatEventDateParts(data?.dataEvent?.date), [data?.dataEvent?.date]);
 
     return (
-        <div className="w-full h-[522px] relative bg-white" id="countdown">
+        <div className="w-full h-[522px] lg:h-[100vh] relative bg-white" id="date">
+            {/* Background full-bleed, TANPA padding */}
             <div
                 className="absolute inset-0 bg-cover bg-center pointer-events-none grayscale"
                 style={{ backgroundImage: `url('/images/countdown_bg.png')` }}
             />
-            <div className="countdown relative flex flex-col 
-            p-[50px_46px]
-            justify-between h-full w-full">
-                <div className="title text-center w-[274px] mx-auto">
-                    From all the years of knowing each other,
-                    <br></br>
-                    now the countdown to forever finally begins.
-                </div>
+
+            {/* Content, padding ditaruh DI SINI */}
+            <div className="countdown relative flex flex-col justify-between h-full w-full py-[50px] lg:py-[100px]">
+                <FadeIn>
+                    <div className="title text-center w-[274px] lg:w-[413px] mx-auto">
+                        From all the years of knowing each other,
+                        <br></br>
+                        <span> now the countdown to forever finally begins.</span>
+                    </div>
+                </FadeIn>
                 {/* Countdown grid */}
-                <div className="mb-[50px] lg:mb-[67px] h-[32px] lg:h-[67px] w-full mx-auto lg:mt-[17px]">
-                    <div className="flex justify-between w-full 
-                                gap-[7px]">
-                        {items.map((it) => (
-                            <div
+                <div className="w-full mx-auto lg:mt-[17px]">
+                    <div className="flex w-full gap-[7px] lg:gap-[14px] justify-center">
+                        {items.map((it, index) => (
+                            <BouncyZoom
                                 key={it.label}
                                 className="countdown_container flex flex-col items-center justify-center text-center z-10"
+                                delay={index * 0.15}
                             >
                                 <div className="countdown_timer_container 
+                                flex items-center justify-center
                                 rounded-[20px]
-                                full
+                                lg:rounded-[41px]
+                                w-[70px]
+                                h-[70px]
+                                lg:w-[145px]
+                                lg:h-[145px]
                                 bg-[#FFFFFF]
-                                ">
+                                mb-3
+                                lg:mb-[26px]
+                            ">
                                     <h2 className="countdown_timer my-auto">
                                         {it.value}
                                     </h2>
@@ -77,7 +89,7 @@ export default function Countdown({ data }: CountdownProps) {
                                 <div className="countdown_timer label">
                                     {it.label}
                                 </div>
-                            </div>
+                            </BouncyZoom>
                         ))}
                     </div>
                 </div>
