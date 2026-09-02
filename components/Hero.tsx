@@ -81,14 +81,14 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ data, shouldPlay = true }, re
             >
                 {/* Desktop */}
                 <source
-                    src="/videos/video_2.mp4"
+                    src="/videos/intro_video.mp4"
                     type="video/mp4"
                     media="(min-width: 768px)"
                 />
 
                 {/* Mobile */}
                 <source
-                    src="/videos/intro_video.mp4"
+                    src="/videos/video_2.mp4"
                     type="video/mp4"
                     media="(max-width: 767px)"
                 />
