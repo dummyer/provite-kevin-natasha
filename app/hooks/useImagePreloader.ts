@@ -2,10 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-function getNextImageUrl(src: string, width: number, quality = 75) {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality}`;
-}
-
 export function useImagePreloader(imageUrls: string[]) {
   const [loadedCount, setLoadedCount] = useState(0);
   const [isDone, setIsDone] = useState(false);
@@ -37,10 +33,11 @@ export function useImagePreloader(imageUrls: string[]) {
 
     uniqueUrls.forEach((src) => {
       const img = new window.Image();
-      imgRefs.push(img);
+      imgRefs.push(img); // <-- kunci fix-nya di sini
+
       img.onload = handleDone;
       img.onerror = handleDone;
-      img.src = getNextImageUrl(src, 1920); // width harus MATCH sama yg dipakai <Image> di page
+      img.src = src;
     });
 
     return () => {
