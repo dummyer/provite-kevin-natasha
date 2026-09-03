@@ -18,7 +18,7 @@
 
 .dresscode__title {
     font-family: var(--font-newsreader);
-    font-weight: 600;
+    font-weight: 500;
     font-style: italic;
     font-size: 9px;
     line-height: 100%;
@@ -57,6 +57,10 @@
     color: #131313;
 }
 
+.dresscode__note span {
+    line-height: 15px;
+}
+
 .dresscode__circle .colortext {
     font-family: var(--font-newsreader);
     font-weight: 500;
@@ -87,7 +91,8 @@
     }
     .dresscode__note{
         font-size: 18px;
-        line-height: 100%;
+        font-weight: 400;
+        line-height: 22px;
     }
 
 }

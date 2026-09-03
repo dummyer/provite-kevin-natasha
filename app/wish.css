@@ -59,6 +59,7 @@
     font-size: 12px;
     line-height: 140%;
     letter-spacing: 0%;
+    color: #FFFFFF;
 }
 
 .wish .wishlist .wish_msg {
@@ -68,6 +69,7 @@
     font-size: 12px;
     line-height: 140%;
     letter-spacing: 0%;
+    color: #FFFFFF;
 }
 
 @media (min-width: 1024px) {

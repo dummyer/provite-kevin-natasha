@@ -37,11 +37,11 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
           >
             {/* Background image layer */}
             <Image
-              src="/images/bg_popup.png"
+              src="/images/bg_popup_full.png"
               alt=""
               fill
               priority
-              className="object-cover -z-10"
+              className="object-cover -z-10 opacity-50"
               style={{ objectPosition: "0% 90%" }}
               sizes="(max-width: 768px) 290px, 416px"
             />
@@ -82,7 +82,7 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
                 <button
                   onClick={onClose}
                   className="hover rounded-full bg-[#131313] 
-                  py-[11px] w-[154px] h-[30px] popup_title_button transition"
+                  py-[11px] md:mt-[20px] w-[154px] md:w-[220px] h-[30px] lg:h-[35px] popup_title_button transition"
                 >
                   VIEW INVITATION
                 </button>

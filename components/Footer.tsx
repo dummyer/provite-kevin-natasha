@@ -18,7 +18,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ data }, ref) => {
             <div className="items-center flex flex-col w-full relative ">
                 <div className="p-[35px_32px] lg:pb-[100px] text-center flex flex-col w-full">
                     <div className="mx-auto mb-[55px] lg:mb-[42px]">
-                        <Image src="/images/logo_hero_black.png" priority alt="Logo" width={30} height={29}
+                        <Image src="/images/logo_hero_black.svg" priority alt="Logo" width={30} height={29}
                             className="lg:w-[52px] lg:h-[52px]"
                         />
                     </div>

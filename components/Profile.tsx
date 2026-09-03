@@ -29,7 +29,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
                         We cordially invite you to witness the union of
                     </div>
                     <div>
-                        <Image src="/images/logo_hero_black.png" alt="Logo" width={30} height={29}
+                        <Image src="/images/logo_hero_black.svg" alt="Logo" width={30} height={29}
                             className="lg:w-[52px] lg:h-[52px]"
                         />
                     </div>

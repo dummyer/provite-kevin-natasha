@@ -115,6 +115,7 @@ img {
 .popup .popup_title_button {
   font-size: 12px;
   line-height: 100%;
+  font-weight: 400;
   text-align: center;
   color: #FEF8EF;
 }

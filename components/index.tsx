@@ -209,10 +209,10 @@ export default function Home({
               <Wishes data={mergedData} />
 
               {/* Wrapper shared background buat Gallery2 + Footer */}
-              <div className="relative w-full">
+              <div className="relative w-full bg-white">
                 <div
-                  className="absolute inset-0 w-full bg-cover bg-center pointer-events-none"
-                  style={{ backgroundImage: `url('/images/footer_bg.png')` }}
+                  className="absolute inset-0 w-full opacity-87 bg-cover bg-center pointer-events-none"
+                  style={{ backgroundImage: `url('/images/footer_bg_full.png')` }}
                 />
                 <div className="relative z-10">
                   <Gallery2 data={mergedData} />

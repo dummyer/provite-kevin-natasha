@@ -14,13 +14,14 @@ const Video = forwardRef<HTMLElement, VideoProps>(({ data }, ref) => {
             
             p-[126px_17px_40px]">
                 <div className="relative w-full lg:w-[775px] h-[200px] lg:h-[415px] md:h-[415px] m-auto">
-                   <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        controls
+                        playsInline
+                        preload="auto"
+                        className="
                     absolute
                     inset-0
                     z-0
@@ -28,12 +29,12 @@ const Video = forwardRef<HTMLElement, VideoProps>(({ data }, ref) => {
                     h-full
                     object-cover
                 "
-            >
-                <source
-                    src="/videos/video_2.mp4"
-                    type="video/mp4"
-                />
-            </video>
+                    >
+                        <source
+                            src="/videos/video_2.mp4"
+                            type="video/mp4"
+                        />
+                    </video>
                 </div>
 
                 <div className="desc relative mx-auto mt-[157px] lg:mt-[86px]">

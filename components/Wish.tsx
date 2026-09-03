@@ -89,7 +89,7 @@ export default function Wishes({ data }: WishesProps) {
             <div
                 className="absolute inset-0 mix-blend-multiply pointer-events-none"
                 style={{
-                    backgroundImage: `url('/images/rsvp_bg.png')`,
+                    backgroundImage: `url('/images/dresscode_bg_full.png')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
@@ -107,7 +107,7 @@ export default function Wishes({ data }: WishesProps) {
                         items-center
                         text-center
                         mx-auto
-                        md:p-[60px_100px]
+                        md:py-[60px_100px]
                         p-[35px_51px_58px]
                         md:w-[592px]
                         w-full

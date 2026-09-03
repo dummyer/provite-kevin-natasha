@@ -139,8 +139,6 @@ export default function Event({ data }: EventProps) {
           absolute
           inset-0
           z-30
-          border
-          border-black/65
           pointer-events-none
         "
             />
@@ -341,6 +339,7 @@ export default function Event({ data }: EventProps) {
                                     <div
                                         className="
                     w-[200px]
+                    md:w-[286px]
                     h-px
 
                     my-[35px]

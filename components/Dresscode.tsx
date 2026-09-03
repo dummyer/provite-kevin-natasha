@@ -18,8 +18,8 @@ const Dresscode = forwardRef<HTMLElement, DresscodeProps>(({ data }, ref) => {
         <div className="dresscode w-full relative bg-[#F7F7F7]" id="dresscode">
             {/* Layer 1: background image, full opacity */}
             <div
-                className="absolute inset-0 bg-cover bg-center pointer-events-none"
-                style={{ backgroundImage: `url('/images/dresscode_bg.jpg')` }}
+                className="absolute inset-0 bg-cover bg-center bg-[#ffffff] pointer-events-none opacity-63"
+                style={{ backgroundImage: `url('/images/dresscode_bg_full.png')` }}
             />
 
             {/* Layer 2: white wash tipis di atas gambar */}
@@ -36,21 +36,21 @@ const Dresscode = forwardRef<HTMLElement, DresscodeProps>(({ data }, ref) => {
                             {/* Black circle */}
                             <BouncyZoom
                                 className="dresscode__circle w-[90px] h-[90px] lg:w-[165px] lg:h-[165px] 
-                            pr-[7px]
+                          
                             aspect-square shrink-0 rounded-full bg-[#131313] flex items-center justify-end"
                                 delay={0}
                             >
-                                <span className="colortext lg:hidden">Black</span>
+                                <span className="colortext mr-[7px] lg:hidden">Black</span>
                             </BouncyZoom>
 
                             {/* Gray circle */}
                             <BouncyZoom
                                 className="dresscode__circle w-[90px] h-[90px] lg:w-[165px] lg:h-[165px] 
-                            pr-[7px]
+                           
                             aspect-square shrink-0 rounded-full bg-[#565656] flex items-center justify-end"
                                 delay={0.15}
                             >
-                                <span className="colortext lg:hidden">Gray</span>
+                                <span className="colortext mr-[7px] lg:hidden">Gray</span>
                             </BouncyZoom>
                         </div>
 
@@ -77,7 +77,7 @@ const Dresscode = forwardRef<HTMLElement, DresscodeProps>(({ data }, ref) => {
                         </BouncyZoom>
                     </div>
 
-                    <p className="dresscode__note mt-[27px] lg:mt-15 max-w-[420px] mx-auto">
+                    <p className="dresscode__note mt-[27px] leading-[22px] lg:mt-15 max-w-[420px] mx-auto">
                         It would be a huge pleasure for us if you could <br></br>
                         <span className="leading-[12px] lg:leading-[22px]">kindly wear a{" "}</span>
                         <span className="font-bold leading-[12px] lg:leading-[22px]">suit</span> or{" "}
