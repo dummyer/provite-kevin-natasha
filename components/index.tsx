@@ -125,11 +125,12 @@ export default function Home({
 
   function GalleryVideoSync({ videoRef }: { videoRef: React.RefObject<HTMLVideoElement | null> }) {
     useSoundSync("gallery", videoRef, {
-      listenNativeControls: true,
-      unmuteOnPlay: true,
+        listenNativeControls: true,
+        unmuteOnPlay: true,
+        restoreOnPause: true, 
     });
     return null;
-  }
+}
 
 
   return (

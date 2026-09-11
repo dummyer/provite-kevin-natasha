@@ -5,26 +5,43 @@ import BouncyZoom from "@/app/sections/BouncyZoom";
 import { useSound } from "@/app/context/SoundContext";
 
 type VideoSoundButtonProps = {
-    id: string; // unique per video, misal "hero" atau "gallery"
-    videoRef: React.RefObject<HTMLVideoElement | null>;
+    id: string;
+    videoRef: React.RefObject<HTMLVideoElement | HTMLAudioElement | null>;
+    mode?: "mute" | "pause"; // "mute" = video (default), "pause" = BGM audio
+    canPlay?: boolean; // gerbang eksternal, misal shouldPlay/!isBlurred
 };
 
-export default function VideoSoundButton({ id, videoRef }: VideoSoundButtonProps) {
+export default function VideoSoundButton({
+    id,
+    videoRef,
+    mode = "mute",
+    canPlay = true,
+}: VideoSoundButtonProps) {
     const { activeId, requestUnmute, requestMute } = useSound();
     const isMuted = activeId !== id;
 
-    // sinkronin properti .muted di elemen video sesuai state global
     useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        video.muted = isMuted;
-    }, [isMuted, videoRef]);
+        const media = videoRef.current;
+        if (!media) return;
+
+        if (mode === "pause") {
+            const shouldBePlaying = !isMuted && canPlay;
+            if (shouldBePlaying) {
+                media.muted = false;
+                media.play().catch(() => {});
+            } else {
+                media.pause();
+            }
+        } else {
+            media.muted = isMuted;
+        }
+    }, [isMuted, videoRef, mode, canPlay]);
 
     const toggleMute = () => {
         if (isMuted) {
-            requestUnmute(id); // otomatis bikin video lain ke-mute
+            requestUnmute(id);
         } else {
-            requestMute(id);
+            requestMute(id, { manual: true });
         }
     };
 

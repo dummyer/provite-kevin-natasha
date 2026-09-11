@@ -72,6 +72,7 @@ const dummyData = [
 
 export default function Event({ data }: EventProps) {
     const dataEvent = data.dataGuestEventSession ?? [];
+    //console.log(dataEvent)
     const events =
         Array.isArray(dataEvent) && dataEvent.length > 0
             ? dataEvent
@@ -83,7 +84,9 @@ export default function Event({ data }: EventProps) {
 
     const groupedEvents = events.reduce(
         (groups: Record<string, any[]>, event: any) => {
-            const address = event?.address || "Unknown Venue";
+            const address =
+                event?.address?.trim() ||
+                "InterContinental Hotel Dago Pakar Bandung, Jalan Raya Resort, Mekarsaluyu, Bandung City, West Java, Indonesia";
 
             if (!groups[address]) {
                 groups[address] = [];
@@ -389,20 +392,20 @@ export default function Event({ data }: EventProps) {
                                                 );
 
                                             return (
-                                                 <div
-                                                 key={event.id}
-                                                        className="
+                                                <div
+                                                    key={event.id}
+                                                    className="
                                                     subevent
                                                         flex
                                                         flex-col
                                                         items-center
                                                         text-center
                                                     "
-                                                    >
-                                                        {/* Event Name */}
+                                                >
+                                                    {/* Event Name */}
 
-                                                        <FadeIn>
-                                                            <h2
+                                                    <FadeIn>
+                                                        <h2
                                                             className="subevent_name"
                                                         >
                                                             {event.name}
@@ -424,8 +427,8 @@ export default function Event({ data }: EventProps) {
                                                         >
                                                             @{time}
                                                         </span>
-                                                        </FadeIn>
-                                                    </div>
+                                                    </FadeIn>
+                                                </div>
                                             );
                                         }
                                     )}
@@ -505,7 +508,7 @@ function getVenue(
         name:
             address
                 .split(",")[0]
-                ?.trim() || "The Venue",
+                ?.trim() || "...",
 
         address: address
             .split(",")

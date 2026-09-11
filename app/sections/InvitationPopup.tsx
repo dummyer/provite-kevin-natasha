@@ -110,7 +110,7 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
                   py-[11px] w-[170px] md:w-[200px] h-[33px] 
                   lg:h-[40px] popup_title_button transition"
                 >
-                  <span className="pt-[2px]">
+                  <span className="top-[1px] relative">
                     VIEW INVITATION
                   </span>
                 </button>

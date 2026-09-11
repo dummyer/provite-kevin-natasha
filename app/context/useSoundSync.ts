@@ -9,30 +9,32 @@ export function useSoundSync(
     options?: {
         listenNativeControls?: boolean;
         unmuteOnPlay?: boolean;
+        restoreOnPause?: boolean; // <-- baru
     }
 ) {
-    const { activeId, requestUnmute, requestMute } = useSound();
+    const { activeId, requestUnmute, requestMute, requestPause } = useSound();
     const isMuted = activeId !== id;
     const hasAutoUnmutedRef = useRef(false);
 
-    // video ini ikut ke-mute/unmute kalau video LAIN jadi active
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
         video.muted = isMuted;
     }, [isMuted, videoRef]);
 
-    // dengerin native controls (mute/unmute manual dari player bawaan browser)
     useEffect(() => {
         if (!options?.listenNativeControls) return;
         const video = videoRef.current;
         if (!video) return;
 
         const handleVolumeChange = () => {
+            // cuma pengaruh ke global kalau video LAGI PLAYING (bukan paused)
+            if (video.paused) return;
+
             if (!video.muted) {
                 requestUnmute(id);
             } else if (activeId === id) {
-                requestMute(id);
+                requestMute(id, { manual: true });
             }
         };
 
@@ -41,20 +43,31 @@ export function useSoundSync(
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [videoRef, id, requestUnmute, requestMute, options?.listenNativeControls]);
 
-    // cuma sekali: pas play PERTAMA kali, bantu unmute otomatis
     useEffect(() => {
         if (!options?.unmuteOnPlay) return;
         const video = videoRef.current;
         if (!video) return;
 
         const handlePlay = () => {
-            if (hasAutoUnmutedRef.current) return; // udah pernah -> gak diulang
+            if (hasAutoUnmutedRef.current) return;
             hasAutoUnmutedRef.current = true;
             requestUnmute(id);
         };
 
         video.addEventListener("play", handlePlay);
         return () => video.removeEventListener("play", handlePlay);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [videoRef, id, requestUnmute, options?.unmuteOnPlay]);
+
+    useEffect(() => {
+        if (!options?.restoreOnPause) return;
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handlePause = () => {
+            requestPause(id);
+        };
+
+        video.addEventListener("pause", handlePause);
+        return () => video.removeEventListener("pause", handlePause);
+    }, [videoRef, id, requestPause, options?.restoreOnPause]);
 }

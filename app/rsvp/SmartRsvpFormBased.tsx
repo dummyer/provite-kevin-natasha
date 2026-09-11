@@ -43,7 +43,7 @@ function AttendToggle({ className }: { className?: string }) {
     const { setAttendStatus } = useSmartRsvpContext();
     return (
         <button onClick={() => setAttendStatus(1)} className={className}>
-            Hadir
+            <span className="relative top-[0px]">ATTEND</span>
         </button>
     );
 }
@@ -52,7 +52,7 @@ function NotAttendToggle({ className }: { className?: string }) {
     const { setAttendStatus } = useSmartRsvpContext();
     return (
         <button onClick={() => setAttendStatus(2)} className={className}>
-            Tidak Hadir
+            <span className="relative top-[0px]">UNABLE TO ATTEND</span>
         </button>
     );
 }
@@ -67,12 +67,27 @@ function SubmitButton({ className }: { className?: string }) {
 
     return (
         <>
-            <button onClick={handleSubmit} className={className} disabled={isSubmit || confirmed}>
-                {isSubmit
-                    ? "Mengirim..."
-                    : attendStatus === 1
-                        ? "Konfirmasi Hadir"
-                        : "Konfirmasi Tidak Hadir"}
+            <button
+                onClick={handleSubmit}
+                className={className}
+                disabled={isSubmit}
+            >
+                <span
+                    key={isSubmit ? "loading" : attendStatus}
+                    className="block text-center md:leading-[22px] relative top-[1px]"
+                >
+                    {isSubmit ? (
+                        "Mengirim..."
+                    ) : attendStatus === 1 ? (
+                        "CONFIRM ATTEND"
+                    ) : (
+                        <>
+                            CONFIRM UNABLE
+                            <br />
+                            TO ATTEND
+                        </>
+                    )}
+                </span>
             </button>
             <h1 className="rsvp_content info lg:max-w-[529px] max-w-[240px]" style={{ lineHeight: "18px", fontSize: "14px" }}>Jika mengalami kendala dalam konfirmasi kehadiran, silakan hubungi tim bantuan kami.</h1>
             <button
@@ -84,9 +99,12 @@ function SubmitButton({ className }: { className?: string }) {
                 style={{ backgroundColor: "#12877B", color: "white", borderRadius: "6px" }}
             >
                 <Image src="/ico/ic_wa.svg" alt="WhatsApp" width={16} height={16}
-                    className="lg:w-[25px] lg:h-[28px]"
+                    className="lg:w-[25px] lg:h-[28px] "
                 />
-                Kirim Pesan Bantuan
+                <span className="relative top-[2px]">
+                    CHAT SUPPORT
+                </span>
+
             </button>
         </>
     );
