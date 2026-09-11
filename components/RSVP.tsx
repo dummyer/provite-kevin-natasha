@@ -33,7 +33,7 @@ function RSVPSectionDesign({ data }: { data: any }) {
             <div
                 className="rsvp w-full relative bg-white 
                 p-[35px_35px_55px] 
-                lg:p-[60px_100px] 
+                lg:p-[100px_136px] 
                 "
                 id="rsvp"
             >
@@ -76,7 +76,7 @@ function RSVPSectionDesign({ data }: { data: any }) {
 
                     <FadeIn>
                         <div className="mb-5 lg:mb-8 rsvp_content w-[200px] lg:w-[382px]">
-                            <h1 className="">
+                            <h1 className="rsvp_dueto">
                                 Due to seating arrangements, we kindly request
                                 <span> your confirmation of attendance.</span>
                             </h1>

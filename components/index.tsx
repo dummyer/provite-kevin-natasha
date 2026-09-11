@@ -60,6 +60,8 @@ const CRITICAL_IMAGES = [
   "/gallery/Asset-11.jpg",
   "/gallery/Asset-12.jpg",
 
+  "/images/popup_img.webp"
+
 ];
 
 

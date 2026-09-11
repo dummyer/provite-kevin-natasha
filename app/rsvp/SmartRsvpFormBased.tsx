@@ -89,8 +89,9 @@ function SubmitButton({ className }: { className?: string }) {
                     )}
                 </span>
             </button>
-            <h1 className="rsvp_content info lg:max-w-[529px] max-w-[240px]">
+            <h1 className="rsvp_content info">
                 If you need assistance with your RSVP,
+                <br></br>
                 please contact our support team.
             </h1>
             <button
