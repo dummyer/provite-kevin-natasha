@@ -89,7 +89,10 @@ function SubmitButton({ className }: { className?: string }) {
                     )}
                 </span>
             </button>
-            <h1 className="rsvp_content info lg:max-w-[529px] max-w-[240px]" style={{ lineHeight: "18px", fontSize: "14px" }}>Jika mengalami kendala dalam konfirmasi kehadiran, silakan hubungi tim bantuan kami.</h1>
+            <h1 className="rsvp_content info lg:max-w-[529px] max-w-[240px]">
+                If you need assistance with your RSVP,
+                please contact our support team.
+            </h1>
             <button
                 onClick={() => window.open("https://wa.me/6281998478131", "_blank")}
                 className="flex items-center gap-[7px] lg:gap-[9px] mt-[20px] 

@@ -13,7 +13,6 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(({ data }, ref) => {
                 <div className="relative w-full lg:w-[775px] h-[200px] lg:h-[415px] md:h-[415px] m-auto">
                     <video
                         ref={ref}
-                        
                         muted
                         loop
                         controls
@@ -21,7 +20,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(({ data }, ref) => {
                         preload="auto"
                         className="absolute inset-0 z-0 w-full h-full object-cover"
                     >
-                        <source src="/videos/video_2.mp4" type="video/mp4" />
+                        <source src="/videos/video_2.mp4#t=1" type="video/mp4" />
                     </video>
                 </div>
 

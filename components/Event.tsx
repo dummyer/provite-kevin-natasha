@@ -42,7 +42,7 @@ const dummyData = [
         name: "HOLY MATRIMONY",
         date: "2026-10-25T11:00:23",
         address:
-            "InterContinental Hotel Dago Pakar Bandung, Jalan Raya Resort, Mekarsaluyu, Bandung City, West Java, Indonesia",
+            "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Jl. Raya Resort, Mekarsaluyu, Kec. Cimenyan, Kota Bandung, Jawa Barat 40198",
         addressName: "The Wedding Hall",
         latLong: "-6.8667338, 107.6423059",
     },
@@ -51,7 +51,7 @@ const dummyData = [
         name: "TEAPAI CEREMONY",
         date: "2026-10-25T16:00:23",
         address:
-            "InterContinental Hotel Dago Pakar Bandung, Jalan Raya Resort, Mekarsaluyu, Bandung City, West Java, Indonesia",
+            "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Jl. Raya Resort, Mekarsaluyu, Kec. Cimenyan, Kota Bandung, Jawa Barat 40198",
         addressName: "The Grand Ballroom",
         latLong: "-6.8667338, 107.6423059",
     },
@@ -60,7 +60,7 @@ const dummyData = [
         name: "DINNER & RECEPTION",
         date: "2026-10-25T18:00:23",
         address:
-            "InterContinental Hotel Dago Pakar Bandung, Jalan Raya Resort, Mekarsaluyu, Bandung City, West Java, Indonesia",
+            "Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar, Jl. Raya Resort, Mekarsaluyu, Kec. Cimenyan, Kota Bandung, Jawa Barat 40198",
         addressName: "The Grand Ballroom",
         latLong: "-6.8667338, 107.6423059",
     },
@@ -72,7 +72,7 @@ const dummyData = [
 
 export default function Event({ data }: EventProps) {
     const dataEvent = data.dataGuestEventSession ?? [];
-    //console.log(dataEvent)
+    console.log(dataEvent)
     const events =
         Array.isArray(dataEvent) && dataEvent.length > 0
             ? dataEvent
@@ -470,8 +470,10 @@ function getVenue(
 
     if (!address) {
         return {
-            name: "The Venue",
-            address: [],
+            name: "Intercontinental Hotel",
+            address: ['Jalan Resor Dago Pakar Raya 2B Resor Dago Pakar',
+                'Jl. Raya Resort, Mekarsaluyu, Kec. Cimenyan, Kota Bandung',
+                'Jawa Barat 40198'],
             mapUrl: latLong
                 ? `https://www.google.com/maps?q=${latLong}`
                 : "https://maps.google.com",

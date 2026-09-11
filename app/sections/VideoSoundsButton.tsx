@@ -7,8 +7,8 @@ import { useSound } from "@/app/context/SoundContext";
 type VideoSoundButtonProps = {
     id: string;
     videoRef: React.RefObject<HTMLVideoElement | HTMLAudioElement | null>;
-    mode?: "mute" | "pause"; // "mute" = video (default), "pause" = BGM audio
-    canPlay?: boolean; // gerbang eksternal, misal shouldPlay/!isBlurred
+    mode?: "mute" | "pause";
+    canPlay?: boolean;
 };
 
 export default function VideoSoundButton({
@@ -36,6 +36,27 @@ export default function VideoSoundButton({
             media.muted = isMuted;
         }
     }, [isMuted, videoRef, mode, canPlay]);
+
+    // pause pas tab di-hide, lanjut play lagi pas balik (kalau mode "pause")
+    useEffect(() => {
+        if (mode !== "pause") return;
+        const media = videoRef.current;
+        if (!media) return;
+
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === "hidden") {
+                media.pause();
+            } else {
+                const shouldBePlaying = !isMuted && canPlay;
+                if (shouldBePlaying) {
+                    media.play().catch(() => {});
+                }
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+        return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+    }, [mode, videoRef, isMuted, canPlay]);
 
     const toggleMute = () => {
         if (isMuted) {

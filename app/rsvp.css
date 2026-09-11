@@ -42,9 +42,8 @@
 
 .rsvp .rsvp_content {
     font-weight: 400;
-    font-style: Italic;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 10px;
+    line-height: 16px;
     letter-spacing: 0%;
     text-align: center;
 
@@ -122,9 +121,9 @@
     }
 
     .rsvp .rsvp_content{
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 500;
-        line-height: 100%;
+        line-height: 23px;
     }
 
     .rsvp .rsvp_content span{
