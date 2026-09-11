@@ -74,7 +74,7 @@ function SubmitButton({ className }: { className?: string }) {
             >
                 <span
                     key={isSubmit ? "loading" : attendStatus}
-                    className="block text-center md:leading-[22px] relative top-[1px]"
+                    className="block text-center lg:leading-[22px] relative top-[1px]"
                 >
                     {isSubmit ? (
                         "Mengirim..."
@@ -96,14 +96,14 @@ function SubmitButton({ className }: { className?: string }) {
             </h1>
             <button
                 onClick={() => window.open("https://wa.me/6281998478131", "_blank")}
-                className="flex items-center gap-[7px] lg:gap-[9px] mt-[20px] 
+                className="flex items-center gap-[7px] lg:gap-[9px] mt-[20px] lg:mt-[30px] 
                                     py-[12px] px-[6px]
-                                    lg:py-[3px] lg:px-[53px]
-                                    hover rsvp_button cursor-pointer lg:w-[368px] w-[200px] lg:h-[40px] h-[30px] items-center justify-center"
-                style={{ backgroundColor: "#12877B", color: "white", borderRadius: "6px" }}
+                                    hover rsvp_button cursor-pointer 
+                                    lg:w-[230px] w-[160px] lg:h-[40px] h-[30px] items-center justify-center"
+                style={{ backgroundColor: "#12877B", color: "white", borderRadius: "55px" }}
             >
                 <Image src="/ico/ic_wa.svg" alt="WhatsApp" width={16} height={16}
-                    className="lg:w-[25px] lg:h-[28px] "
+                    className="lg:w-[23px] lg:h-[23px] "
                 />
                 <span className="relative top-[2px]">
                     CHAT SUPPORT

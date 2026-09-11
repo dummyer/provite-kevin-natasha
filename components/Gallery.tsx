@@ -41,7 +41,7 @@ export default function Gallery({ data }: GalleryProps) {
           clickable: true,
         }}
         autoplay={{
-          delay: 2000,
+          delay: 20222200,
           disableOnInteraction: false,
         }}
         loop={true}

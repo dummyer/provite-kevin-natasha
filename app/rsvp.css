@@ -53,8 +53,8 @@
     font-family: var(--font-newsreader);
     font-weight: 500;
     font-style: Italic;
-    font-size: 18px;
-    line-height: 100%;
+    font-size: 12px;
+    line-height: 14px;
     letter-spacing: 0%;
     text-align: center;
     color: #FFFFFF;
@@ -68,13 +68,11 @@
     font-family: var(--font-newsreader);
     font-weight: 500;
     font-style: Italic;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 14px;
     letter-spacing: 0%;
     text-align: center;
     color: #FFFFFF;
-
-
 }
 
 .rsvp .rsvp_confirm_label {
@@ -123,6 +121,13 @@
 
 
 @media (min-width: 1024px) {
+    
+    .rsvp .rsvp_content .rsvp_dueto {
+
+        font-size: 18px;
+        line-height: 22px;
+    }
+
     .rsvp .rsvp_title {
         font-size: 16px;
         line-height: 100%;
@@ -166,4 +171,5 @@
         line-height: 23.3px;
         font-weight: 500;
     }
+
 }

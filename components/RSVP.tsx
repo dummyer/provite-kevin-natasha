@@ -75,19 +75,20 @@ function RSVPSectionDesign({ data }: { data: any }) {
                     </FadeIn>
 
                     <FadeIn>
-                        <div className="mb-5 lg:mb-8 rsvp_content w-[200px] lg:w-[382px]">
-                            <h1 className="rsvp_dueto">
-                                Due to seating arrangements, we kindly request
-                                <span> your confirmation of attendance.</span>
-                            </h1>
-                            <span> by </span>
-                            <span className="rsvp_time">
-                                {moment(
+                        <div className="mb-5 lg:mb-8 rsvp_content">
+                            <p className="rsvp_dueto">
+                                Due to seating arrangements, we kindly 
+                                <br></br>
+                                 request your confirmation of attendance.
+                                 <br></br>
+                                 by {moment(
                                     data?.dataEvent?.closeRSVPDate
                                         ? new Date(data.dataEvent.closeRSVPDate).toISOString()
                                         : new Date().toISOString()
                                 ).format("DD MMMM YYYY")}
-                            </span>
+                            </p>
+                           
+                          
                         </div>
                     </FadeIn>
 
