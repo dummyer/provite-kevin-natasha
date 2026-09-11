@@ -71,7 +71,7 @@ const dummyData = [
    ========================================================= */
 
 export default function Event({ data }: EventProps) {
-    const dataEvent = data.getGuestEventSessionByPinNew ?? [];
+    const dataEvent = data.dataGuestEventSession ?? [];
     const events =
         Array.isArray(dataEvent) && dataEvent.length > 0
             ? dataEvent

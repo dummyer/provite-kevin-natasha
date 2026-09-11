@@ -21,39 +21,24 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ data, shouldPlay = true }, re
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
+    const video = videoRef.current;
+    if (!video) return;
 
-        const handleVisibilityChange = () => {
-            if (document.visibilityState === "visible" && shouldPlay) {
-                video.muted = false;
-                video.play().catch(() => { });
-            } else {
-                video.muted = true;
-                video.pause();
-            }
-        };
-
+    const handleVisibilityChange = () => {
         if (document.visibilityState === "visible" && shouldPlay) {
-            video.muted = false;
-            video.play().catch(() => { });
+            video.play().catch(() => {});
         } else {
-            video.muted = true;
             video.pause();
         }
+    };
 
-        document.addEventListener(
-            "visibilitychange",
-            handleVisibilityChange
-        );
+    handleVisibilityChange();
 
-        return () => {
-            document.removeEventListener(
-                "visibilitychange",
-                handleVisibilityChange
-            );
-        };
-    }, [shouldPlay]);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+}, [shouldPlay]);
 
     return (
         <div
@@ -93,7 +78,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ data, shouldPlay = true }, re
                     media="(max-width: 767px)"
                 />
             </video>
-            <VideoSoundButton videoRef={videoRef} />
+            <VideoSoundButton id="hero" videoRef={videoRef} />
             {/* =========================================
                 CONTENT
                ========================================= */}
@@ -119,7 +104,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ data, shouldPlay = true }, re
 
                 <div>
                     <Image
-                        src="/images/logo_hero.png"
+                        src="/images/logo_putih.webp"
                         alt="Logo"
                         width={57}
                         height={54}

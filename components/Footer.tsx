@@ -28,7 +28,7 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ data }, ref) => {
                         </div>
                     </FadeIn>
                     <FadeIn>
-                        <div className="desc mb-[66px] lg:w-[468px] lg:mb-[59px] mx-auto">
+                        <div className="desc mb-[66px] w-[300px] lg:w-[468px] lg:mb-[59px] mx-auto">
                             For being a significant part of our life, journey, and story.
                             <span> We look forward to celebrate our day with you.
                                 See you very soon, loved and precious ones!</span>

@@ -43,7 +43,7 @@ export default function PopupWrapper({
 
   return (
     <div
-      className="fixed z-40 flex items-center justify-center animate-popup-zoom"
+      className="fixed z-50 flex items-center justify-center animate-popup-zoom"
       style={{
         top: edgeMargin,
         left: edgeMargin,

@@ -1,23 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import BouncyZoom from "@/app/sections/BouncyZoom";
+import { useSound } from "@/app/context/SoundContext";
 
 type VideoSoundButtonProps = {
+    id: string; // unique per video, misal "hero" atau "gallery"
     videoRef: React.RefObject<HTMLVideoElement | null>;
 };
 
-export default function VideoSoundButton({
-    videoRef,
-}: VideoSoundButtonProps) {
-    const [isMuted, setIsMuted] = useState(false);
+export default function VideoSoundButton({ id, videoRef }: VideoSoundButtonProps) {
+    const { activeId, requestUnmute, requestMute } = useSound();
+    const isMuted = activeId !== id;
 
-    const toggleMute = () => {
+    // sinkronin properti .muted di elemen video sesuai state global
+    useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
+        video.muted = isMuted;
+    }, [isMuted, videoRef]);
 
-        video.muted = !video.muted;
-        setIsMuted(video.muted);
+    const toggleMute = () => {
+        if (isMuted) {
+            requestUnmute(id); // otomatis bikin video lain ke-mute
+        } else {
+            requestMute(id);
+        }
     };
 
     return (

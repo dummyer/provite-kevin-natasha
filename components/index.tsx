@@ -29,6 +29,9 @@ import Video from "./Video";
 import Event from "./Event"
 import Gallery from "./Gallery";
 import LogoSeparator from "./LogoSeparator";
+import { SoundProvider } from "@/app/context/SoundContext";
+import { useSoundSync } from "@/app/context/useSoundSync";
+import VideoSoundButton from "@/app/sections/VideoSoundsButton";
 
 type ActivePopup =
   | {
@@ -84,6 +87,7 @@ export default function Home({
   const { sessionData: guestEventSession, isLoading: isSessionLoading } = useGuestEventSession(data?.dataEvent?.id);
   const { messages: allPersonalGuestMessages, isLoading: isLoading } = useAllPersonalGuestMessages(data?.dataEvent?.id);
 
+  const galleryVideoRef = useRef<HTMLVideoElement>(null);
   const mergedData = {
     ...data,
     dataGuest: guestData,
@@ -118,6 +122,14 @@ export default function Home({
       window.scrollTo(0, 0);
     }
   }, []);
+
+  function GalleryVideoSync({ videoRef }: { videoRef: React.RefObject<HTMLVideoElement | null> }) {
+    useSoundSync("gallery", videoRef, {
+      listenNativeControls: true,
+      unmuteOnPlay: true,
+    });
+    return null;
+  }
 
 
   return (
@@ -187,41 +199,44 @@ export default function Home({
         <Menu />
 
         <div className="relative">
-          <main className="w-full mx-auto bg-[#37576F]">
-            <SectionMotif className="w-full ">
-              <Hero data={mergedData} shouldPlay={!isBlurred} />
-              <Bible data={mergedData} />
-              <Profile data={mergedData} />
-              <Gallery1 data={mergedData} />
+          <SoundProvider>
+            <main className="w-full mx-auto bg-[#37576F]">
+              <SectionMotif className="w-full ">
+                <Hero data={mergedData} shouldPlay={!isBlurred} />
+                <Bible data={mergedData} />
+                <Profile data={mergedData} />
+                <Gallery1 data={mergedData} />
 
-              <LogoSeparator desktop={false} />
+                <LogoSeparator desktop={false} />
 
-              <Event data={mergedData} />
-              <Countdown data={mergedData} />
-              <Dresscode data={mergedData} />
-              <Gallery data={mergedData} />
+                <Event data={mergedData} />
+                <Countdown data={mergedData} />
+                <Dresscode data={mergedData} />
+                <Gallery data={mergedData} />
 
-              <LogoSeparator />
+                <LogoSeparator />
 
-              <Rsvp data={mergedData} />
-              <Photocard data={mergedData} />
-              <Video data={mergedData} />
-              <Wishes data={mergedData} />
+                <Rsvp data={mergedData} />
+                <Photocard data={mergedData} />
+                <Video ref={galleryVideoRef} data={mergedData} />
+                <GalleryVideoSync videoRef={galleryVideoRef} />
+                <Wishes data={mergedData} />
 
-              {/* Wrapper shared background buat Gallery2 + Footer */}
-              <div className="relative w-full bg-white">
-                <div
-                  className="absolute inset-0 w-full opacity-87 bg-cover bg-center pointer-events-none"
-                  style={{ backgroundImage: `url('/images/footer_bg_full.png')` }}
-                />
-                <div className="relative z-10">
-                  <Gallery2 data={mergedData} />
-                  <Footer data={mergedData} />
+                {/* Wrapper shared background buat Gallery2 + Footer */}
+                <div className="relative w-full bg-white">
+                  <div
+                    className="absolute inset-0 w-full opacity-87 bg-cover bg-center pointer-events-none"
+                    style={{ backgroundImage: `url('/images/footer_bg_full.png')` }}
+                  />
+                  <div className="relative">
+                    <Gallery2 data={mergedData} />
+                    <Footer data={mergedData} />
+                  </div>
                 </div>
-              </div>
-            </SectionMotif>
+              </SectionMotif>
 
-          </main>
+            </main>
+          </SoundProvider>
         </div>
 
 
