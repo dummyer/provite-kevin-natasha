@@ -72,28 +72,33 @@ img {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
-  color: #4D4D4D;
+  color: #131313;
 
 }
 
 .popup .popup_title_gold {
+  font-weight: 500;
+  font-style: Italic;
   font-size: 10px;
   line-height: 100%;
-  text-transform: uppercase;
+  text-align: center;
+
+  text-transform: none;
 }
 
 .popup .popup_title_name {
   font-family: var(--font-pinyon-script);
   font-weight: 400;
   font-style: Regular;
-  font-size: 36px;
-  line-height: 24.29px;
+  font-size: 44px;
+  line-height: 28.86px;
   letter-spacing: 0%;
   text-align: center;
   color: #131313;
 }
 
 .popup .popup_title_content {
+  font-family: var(--font-newsreader);
   font-size: 12px;
   line-height: 25px;
 
@@ -102,13 +107,18 @@ img {
 .popup .popup_title_content span {
   font-size: 16px;
   line-height: 25px;
-
+  text-decoration: underline;
 }
 
 .popup .popup_title_apology {
-  font-size: 10px;
-  line-height: 13px;
+  font-family: var(--font-newsreader);
   font-weight: 500;
+  font-style: Italic;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0%;
+  text-align: center;
+
 
 }
 
@@ -241,22 +251,33 @@ img {
   }
 
   .popup .popup_title_name {
-    font-size: 54px;
+    font-size: 52px;
+    line-height: 100%;
+  }
+  .popup .popup_title_gold {
+    font-size: 12px;
+    line-height: 100%;
   }
 
   .popup .popup_title_content {
-    font-size: 16px;
-    line-height: 31px;
+    font-size: 14px;
+    line-height: 30px;
   }
 
   .popup .popup_title_content span {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .popup .popup_title_apology {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
   }
+   .popup .popup_title_button {
+    font-size: 14px;
+    line-height: 100%;
+  }
+
 
 
   .status_popup_title {
@@ -288,43 +309,5 @@ img {
   }
 
 
-  .popup {
-    font-size: 12px;
-    line-height: 100%;
-
-  }
-
-  .popup .popup_title_gold {
-    font-size: 14px;
-    line-height: 100%;
-  }
-
-  .popup .popup_title_name {
-    font-size: 40px;
-    line-height: 100%;
-  }
-
-  .popup .popup_title_content {
-    font-size: 16px;
-    line-height: 31px;
-
-  }
-
-  .popup .popup_title_content span {
-    font-size: 20px;
-    line-height: 31px;
-
-  }
-
-  .popup .popup_title_apology {
-    font-size: 12px;
-    line-height: 16px;
-
-  }
-
-  .popup .popup_title_button {
-    font-size: 12px;
-    line-height: 100%;
-  }
 
 }

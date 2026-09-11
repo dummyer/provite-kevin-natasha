@@ -12,6 +12,7 @@ type InvitationPopupProps = {
 export default function InvitationPopup({ onClose, name, data }: InvitationPopupProps) {
   const bothName = data?.dataEvent?.name ?? [];
   const namesOnly = bothName.replace(/^The Wedding of\s*/i, "");
+  const [firstName, secondName] = namesOnly.split("&").map((n: string) => n.trim());
 
   return (
     <>
@@ -31,13 +32,13 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
             }}
             className="relative z-50 
              w-full max-w-sm
-            w-[290px]
+            min-w-[300px]
             md:w-[416px] 
            rounded-[20px] shadow-2xl flex flex-col items-center overflow-hidden"
           >
             {/* Background image layer */}
             <Image
-              src="/images/bg_popup_full.png"
+              src="/images/bg_popup.webp"
               alt=""
               fill
               priority
@@ -48,44 +49,77 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
 
             <div className="w-full flex flex-col items-center">
               {/* Logos - sekarang beneran edge-to-edge karena parent div-nya w-full */}
-              <div className="relative w-full h-[180px] md:h-[220px]">
+              <div className="relative w-full h-[188px] md:h-[220px] overflow-hidden">
                 <Image
-                  src="/images/gallery2.png"
+                  src="/images/popup_img.webp"
                   alt=""
                   fill
                   priority
-                  className="object-cover object-[80%_51.5%] lg:object-[77%_49%]"
-                  sizes="(max-width: 768px) 290px, 416px"
+                  className="object-cover scale-170 md:scale-130 -translate-x-[10px] object-[40%_43%] md:object-[40%_45%]"
+                // sizes="(max-width: 768px) 290px, 416px"
                 />
               </div>
 
               {/* Text content */}
-              <div className="text-center z-1 popup my-[29px_31px] md:my-[35px_36px] px-[20px]">
-                <p className="popup_title_gold mb-[18px] md:mb-[12px]">The Wedding of</p>
-                <div className="mx-auto mb-[6px] md:mb-3">
-                  <h2 className="popup_title_name mx-auto text-start">
-                    {namesOnly}
-                  </h2>
-                </div>
-                <p className="popup_title_content mb-[15px] md:mb-[27px]">
+              <div className="text-center z-50 popup my-[15px_22px] px-[20px]">
+                <p className="popup_title_content mb-[25px] md:mb-[27px]">
                   Dear,
                   <br></br>
                   <span>{name || "......."}</span>
                 </p>
-                <p className="popup_title_apology mb-[16px] md:mb-[23px]">
-                  We sincerely apologize
-                  <br></br>
-                  for any misspelling of names or titles.
+                <p className="popup_title_gold mb-[18px] md:mb-[12px]">
+                  We Invite You to The Wedding of
                 </p>
+                <div className="mx-auto mt-6">
+                  <h2 className="popup_title_name text-start leading-[1.1] 
+                  -rotate-[9deg] origin-left 
+                  -translate-x-[55px]
+                   md:-translate-x-[60px]">
+                    {firstName}
+                  </h2>
+
+                  <div className="flex items-center justify-end gap-1 
+                  translate-x-[35px] 
+                  md:translate-x-[40px] 
+                  md:-translate-y-[35px]
+                  -translate-y-[15px]
+                  ">
+                    <div
+                      className="flex items-center justify-center shrink-0
+                 w-[21px] h-[21px] rounded-full bg-[#131313]"
+                    >
+                      <span className="text-white text-[12px] font-serif italic leading-none">&</span>
+                    </div>
+                    <h2 className="popup_title_name leading-[1.1] -rotate-[9deg] 
+                   
+                    -translate-y-[14px] 
+                    origin-right">
+                      {secondName}
+                    </h2>
+                  </div>
+                </div>
+
 
                 {/* CTA button */}
                 <button
                   onClick={onClose}
-                  className="hover rounded-full bg-[#131313] 
-                  py-[11px] md:mt-[20px] w-[154px] md:w-[220px] h-[30px] lg:h-[35px] popup_title_button transition"
+                  className="hover rounded-[60px] bg-[#131313] 
+                  mt-5 mb-[21px]
+                  md:mt-0
+                  md:py-0
+                  py-[11px] w-[170px] md:w-[200px] h-[33px] 
+                  lg:h-[40px] popup_title_button transition"
                 >
-                  VIEW INVITATION
+                  <span className="pt-[2px]">
+                    VIEW INVITATION
+                  </span>
                 </button>
+                <p className="popup_title_apology">
+                  We sincerely apologize for
+                  <br></br>
+                  any misspelling of names or titles.
+                </p>
+
               </div>
             </div>
           </div>
