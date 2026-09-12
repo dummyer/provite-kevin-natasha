@@ -72,7 +72,7 @@ const dummyData = [
 
 export default function Event({ data }: EventProps) {
     const dataEvent = data.dataGuestEventSession ?? [];
-    console.log(dataEvent)
+    //console.log(dataEvent)
     const events =
         Array.isArray(dataEvent) && dataEvent.length > 0
             ? dataEvent
