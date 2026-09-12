@@ -32,6 +32,7 @@ import LogoSeparator from "./LogoSeparator";
 import { SoundProvider } from "@/app/context/SoundContext";
 import { useSoundSync } from "@/app/context/useSoundSync";
 import VideoSoundButton from "@/app/sections/VideoSoundsButton";
+import RSVPButton from "@/app/sections/RSVPButton";
 
 type ActivePopup =
   | {
@@ -200,7 +201,7 @@ export default function Home({
         </div>
 
         <Menu />
-
+        <RSVPButton visible={!isBlurred}></RSVPButton>
         <div className="relative">
           <SoundProvider>
             <main className="w-full mx-auto bg-[#37576F]">

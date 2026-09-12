@@ -2,78 +2,72 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "@/app/gallery.css";
-
-type GalleryImage =
-  | string
-  | {
-      src: string;
-      position?: string; // contoh: "center top", "20% 50%", "right bottom"
-    };
 
 type GalleryProps = {
   data: any;
 };
 
 export default function Gallery({ data }: GalleryProps) {
-  const images: GalleryImage[] = data?.gallery || [
+  const images: string[] = data?.gallery || [
     "/gallery/Asset-03.jpg",
-    { src: "/gallery/Asset-05.jpg", position: "center 10%" },
-    { src: "/gallery/Asset-06.jpg", position: "top" },
-    { src: "/gallery/Asset-07.jpg", position: "bottom 4%" },
-    { src: "/gallery/Asset-08.jpg", position: "center 65%" },
+    "/gallery/Asset-05.jpg",
+    "/gallery/Asset-06.jpg",
+    "/gallery/Asset-07.jpg",
+    "/gallery/Asset-08.jpg",
     "/gallery/Asset-09.jpg",
-    { src: "/gallery/Asset-10.jpg", position: "bottom" },
-    { src: "/gallery/Asset-11.jpg", position: "center 13%" },
-    { src: "/gallery/Asset-12.jpg", position: "center 30%" },
+    "/gallery/Asset-10.jpg",
+    "/gallery/Asset-11.jpg",
+    "/gallery/Asset-12.jpg",
   ];
 
   return (
     <section className="gallery" id="gallery">
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        speed={800}
-        className="gallery__swiper"
-      >
-        {images.map((image, index) => {
-          const src = typeof image === "string" ? image : image.src;
-          const position = typeof image === "string" ? undefined : image.position;
-
-          return (
-            <SwiperSlide key={index}>
+      <div className="gallery__wrapper">
+        <Swiper
+          modules={[Pagination, Autoplay, Navigation]}
+          slidesPerView={1}
+          spaceBetween={0}
+          centeredSlides={false}
+          breakpoints={{
+            768: {
+              slidesPerView: "auto",
+              centeredSlides: true,
+              spaceBetween: 16,
+            },
+          }}
+          navigation={{
+            prevEl: ".gallery__nav--prev",
+            nextEl: ".gallery__nav--next",
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop={true}
+          speed={700}
+          className="gallery__swiper"
+        >
+          {images.map((src, index) => (
+            <SwiperSlide key={index} className="gallery__slide">
               <div className="gallery__image">
                 <Image
                   src={src}
                   alt={`Gallery ${index + 1}`}
-                  width={1200}
-                  height={1600}
+                  fill
                   priority={index === 0}
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 90vw, 60vw"
                   className="gallery__image-img"
-                  style={
-                    position
-                      ? ({ "--img-position": position } as React.CSSProperties)
-                      : undefined
-                  }
                 />
               </div>
             </SwiperSlide>
-          );
-        })}
-      </Swiper>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }
