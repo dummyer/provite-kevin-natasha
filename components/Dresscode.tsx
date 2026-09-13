@@ -18,7 +18,7 @@ const Dresscode = forwardRef<HTMLElement, DresscodeProps>(({ data }, ref) => {
         <div className="dresscode w-full relative bg-[#F7F7F7]" id="dresscode">
             {/* Layer 1: background image, full opacity */}
             <div
-                className="absolute inset-0 bg-cover bg-center bg-[#ffffff] pointer-events-none opacity-63"
+                className="absolute inset-0 bg-cover bg-center bg-[#ffffff] pointer-events-none opacity-50"
                 style={{ backgroundImage: `url('/images/dresscode_bg_full.png')` }}
             />
 
