@@ -42,8 +42,8 @@ export default function InvitationPopup({ onClose, name, data }: InvitationPopup
               alt=""
               fill
               priority
-              className="object-cover -z-10 opacity-50"
-              style={{ objectPosition: "0% 90%" }}
+              className="object-cover z-0 opacity-100" // sementara full opacity buat cek
+              style={{ objectPosition: "center" }}
               sizes="(max-width: 768px) 290px, 416px"
             />
 

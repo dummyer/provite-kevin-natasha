@@ -243,10 +243,11 @@ export default function Wishes({ data }: WishesProps) {
                             "
                             >
                                 <Image
-                                    src="/ico/ic_send_black.png"
+                                    src="/ico/ic_send_black_full.png"
                                     alt="send"
-                                    width={14}
+                                    width={16}
                                     height={17}
+                                    className="lg:w-[24px] lg:h-[25px]"
                                 />
 
                                 {isSubmit ? "SENDING..." : "SEND"}
@@ -477,10 +478,11 @@ export default function Wishes({ data }: WishesProps) {
                             "
                             >
                                 <Image
-                                    src="/ico/ic_allmsg_black.png"
+                                    src="/ico/ic_allmsg_black_full.png"
                                     alt="messages"
-                                    width={14}
-                                    height={17}
+                                    width={15}
+                                    height={19}
+                                    className="lg:w-[29px] lg:h-[36px]"
                                 />
 
                                 {showAllMessages

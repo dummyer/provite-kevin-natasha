@@ -20,7 +20,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(({ data }, ref) => {
                         preload="auto"
                         className="absolute inset-0 z-0 w-full h-full object-cover"
                     >
-                        <source src="/videos/video_2.mp4#t=1" type="video/mp4" />
+                        <source src="/videos/intro_video.mp4#t=0" type="video/mp4" />
                     </video>
                 </div>
 
