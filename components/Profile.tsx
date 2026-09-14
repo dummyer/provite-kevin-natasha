@@ -19,7 +19,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
             {/* Background layer, opacity 50% */}
             <div
                 className="absolute inset-0 opacity-50 bg-cover bg-center pointer-events-none"
-                style={{ backgroundImage: `url('/images/bg_profile.png')` }}
+                style={{ backgroundImage: `url('/images/bg_profile.webp')` }}
             />
 
             {/* Content layer, full opacity */}
@@ -39,7 +39,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
                     {/* Groom */}
                     <div className="items-center newperson flex flex-col h-full w-full">
                         <FadeIn>
-                            <Image src="/images/profile_groom.png" priority alt="Logo" width={168} height={223}
+                            <Image src="/images/profile_groom.webp" priority alt="Logo" width={168} height={223}
                                 className="lg:w-[266px] lg:h-[347px]"
                             />
                         </FadeIn>
@@ -68,7 +68,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(({ data }, ref) => {
                     {/* Bride */}
                     <div className="items-center newperson flex flex-col h-full w-full">
                         <FadeIn>
-                            <Image src="/images/profile_bride.png" priority alt="Logo" width={168} height={223}
+                            <Image src="/images/profile_bride.webp" priority alt="Logo" width={168} height={223}
                                 className="lg:w-[266px] lg:h-[347px]"
                             />
                         </FadeIn>

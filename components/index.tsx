@@ -47,19 +47,10 @@ type ActivePopup =
 const CRITICAL_IMAGES = [
   "/images/bg_popup.png",
   "/images/gallery1.png",
-  "/images/gallery2.png",
+  "/images/gallery2.webp",
 
-  "/images/countdown_bg.png",
+  "/images/countdown_bg.webp",
 
-  "/gallery/Asset-03.jpg",
-  "/gallery/Asset-05.jpg",
-  "/gallery/Asset-06.jpg",
-  "/gallery/Asset-07.jpg",
-  "/gallery/Asset-08.jpg",
-  "/gallery/Asset-09.jpg",
-  "/gallery/Asset-10.jpg",
-  "/gallery/Asset-11.jpg",
-  "/gallery/Asset-12.jpg",
 
   "/images/popup_img.webp"
 

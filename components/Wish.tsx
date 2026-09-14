@@ -89,7 +89,7 @@ export default function Wishes({ data }: WishesProps) {
             <div
                 className="absolute inset-0 mix-blend-multiply pointer-events-none"
                 style={{
-                    backgroundImage: `url('/images/dresscode_bg_full.png')`,
+                    backgroundImage: `url('/images/dresscode_bg_full.webp')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}

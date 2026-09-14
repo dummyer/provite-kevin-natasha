@@ -13,7 +13,7 @@ const Photocard = forwardRef<HTMLElement, PhotocardProps>(({ data }, ref) => {
             <div className="md:w-[775px] w-[372px] m-auto p-[15px_9px] md:py-10">
                 <div className="relative w-full lg:w-[775px] h-[200px] md:h-[415px] m-auto">
                     <Image
-                        src="/images/photocard.png"
+                        src="/images/photocard.webp"
                         alt="Photocard"
                         fill
                         priority

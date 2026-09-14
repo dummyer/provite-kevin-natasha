@@ -48,7 +48,7 @@ export default function Countdown({ data }: CountdownProps) {
             {/* Background full-bleed, TANPA padding */}
             <div
                 className="absolute inset-0 bg-cover bg-center pointer-events-none grayscale"
-                style={{ backgroundImage: `url('/images/countdown_bg.png')` }}
+                style={{ backgroundImage: `url('/images/countdown_bg.webp')` }}
             />
 
             {/* Content, padding ditaruh DI SINI */}

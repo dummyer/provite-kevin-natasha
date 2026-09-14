@@ -44,7 +44,7 @@ function RSVPSectionDesign({ data }: { data: any }) {
                 <div
                     className="absolute inset-0 mix-blend-multiply pointer-events-none"
                     style={{
-                        backgroundImage: `url('/images/rsvp_bg.png')`,
+                        backgroundImage: `url('/images/rsvp_bg.webp')`,
                         backgroundSize: "contain",
                         backgroundPosition: "center",
                     }}

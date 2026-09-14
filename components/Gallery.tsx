@@ -16,15 +16,15 @@ type GalleryProps = {
 
 export default function Gallery({ data }: GalleryProps) {
   const images: string[] = data?.gallery || [
-    "/gallery/Asset-03.jpg",
-    "/gallery/Asset-05.jpg",
-    "/gallery/Asset-06.jpg",
-    "/gallery/Asset-07.jpg",
-    "/gallery/Asset-08.jpg",
-    "/gallery/Asset-09.jpg",
-    "/gallery/Asset-10.jpg",
-    "/gallery/Asset-11.jpg",
-    "/gallery/Asset-12.jpg",
+    "/gallery_compressed/Asset-03.webp",
+    "/gallery_compressed/Asset-05.webp",
+    "/gallery_compressed/Asset-06.webp",
+    "/gallery_compressed/Asset-07.webp",
+    "/gallery_compressed/Asset-08.webp",
+    "/gallery_compressed/Asset-09.webp",
+    "/gallery_compressed/Asset-10.webp",
+    "/gallery_compressed/Asset-11.webp",
+    "/gallery_compressed/Asset-12.webp",
   ];
 
   return (

@@ -11,7 +11,7 @@ const Gallery1 = forwardRef<HTMLElement, Gallery1Props>(({ data }, ref) => {
     return (
         <div className="w-full h-[520px] lg:h-[951px] relative bg-white" id="">
             <Image
-                src="/images/gallery.png"
+                src="/images/gallery.webp"
                 alt="Gallery"
                 priority
                 fill

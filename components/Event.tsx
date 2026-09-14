@@ -125,7 +125,7 @@ export default function Event({ data }: EventProps) {
         "
             >
                 <Image
-                    src="/images/rsvp_bg.png"
+                    src="/images/rsvp_bg.webp"
                     alt=""
                     fill
                     priority
