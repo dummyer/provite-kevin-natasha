@@ -221,7 +221,7 @@ export default function Home({
                 <div className="relative w-full bg-white">
                   <div
                     className="absolute inset-0 w-full opacity-87 bg-cover bg-center pointer-events-none"
-                    style={{ backgroundImage: `url('/images/footer_bg_full.png')` }}
+                    style={{ backgroundImage: `url('/images/footer_bg_full.webp')` }}
                   />
                   <div className="relative">
                     <Gallery2 data={mergedData} />
